@@ -10,7 +10,7 @@ export default function ThirdQuestion() {
                 </Box>
                 <Box>
                     <Box>
-                        <Button fullWidth sx={{ borderRadius: '6px', marginBottom: '20px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', padding: '12px 4px', boxShadow: 1, textTransform: 'none' }}> Yes</Button>
+                        <Button fullWidth sx={{ borderRadius: '6px', marginBottom: '20px', marginTop: '15px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', padding: '12px 4px', boxShadow: 1, textTransform: 'none' }}> Yes</Button>
                     </Box>
                     <Box>
                         <Button fullWidth sx={{ borderRadius: '6px', marginBottom: '20px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', padding: '12px 4px', boxShadow: 1, textTransform: 'none' }}> No</Button>

@@ -13,7 +13,7 @@ export default function SeventhQuestion() {
                 </Box>
                 <Box>
                     <Box>
-                        <Button fullWidth sx={{ borderRadius: '6px', marginBottom: '20px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', padding: '12px 4px', boxShadow: 1, textTransform: 'none' }}>
+                        <Button fullWidth sx={{ borderRadius: '6px', marginBottom: '20px', marginTop: '20px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', padding: '12px 4px', boxShadow: 1, textTransform: 'none' }}>
                             Insurance overview
                         </Button>
                     </Box>
@@ -43,10 +43,12 @@ export default function SeventhQuestion() {
                         </Button>
                     </Box>
                     <Box>
-                        <Typography>Other</Typography>
-                    </Box>
-                    <Box>
-                        <TextField fullWidth sx={{ display: 'flex', borderRadius: '6px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', border: '1px solid #dbdada', textTransform: 'none' }}></TextField>
+                        <Box sx={{ marginBottom: '10px', marginTop: '30px' }}>
+                            <Typography>Other</Typography>
+                        </Box>
+                        <Box>
+                            <TextField fullWidth sx={{ display: 'flex', borderRadius: '6px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', border: '1px solid #dbdada', textTransform: 'none' }}></TextField>
+                        </Box>
                     </Box>
                 </Box>
             </Box>

@@ -17,6 +17,8 @@ const theme = createTheme({
       fontSize: '1.2rem',
       fontWeight: '700px',
       textTransform: 'none',
+      lineHeight: '1.7rem',
+      marginBottom: '5px'
     },
     h4: {
       fontSize: '1rem',
@@ -28,7 +30,8 @@ const theme = createTheme({
       fontSize: '0.9rem',
       fontWeight: '400',
       color: '#afabaa',
-      textTransform: 'none'
+      textTransform: 'none',
+      lineHeight: '1.375rem'
     },
     h6: {
       fontSize: '14px',
