@@ -1,12 +1,15 @@
-import { Box } from '@mui/material';
+import { Box, ThemeProvider } from '@mui/material';
 import './App.css';
 import Main from './components/Main';
+import theme from './theme';
 
 function App() {
   return (
-    <Box sx={{ backgroundColor: '#fff9f9' }} className="App">
-      <Main />
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ backgroundColor: '#fff9f9' }} className="App">
+        <Main />
+      </Box>
+    </ThemeProvider>
   );
 }
 

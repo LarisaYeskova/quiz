@@ -8,8 +8,8 @@ export default function SecondQuestion() {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <Box>
-                <Typography sx={{ fontSize: '1.2rem', fontWeight: '700px', textTransform: 'none' }}>How would you describe your teeth?</Typography>
-                <Typography sx={{ fontSize: '0.9rem', fontWeight: '400px', color: '#afabaa', textTransform: 'none' }}>Choose any that apply.</Typography>
+                <Typography variant='h3'>How would you describe your teeth?</Typography>
+                <Typography variant='h5'>Choose any that apply.</Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Box>
@@ -23,7 +23,7 @@ export default function SecondQuestion() {
                             }}
                             src={Crowded}
                         />
-                        <Typography sx={{ fontSize: '1rem', fontWeight: '400px', color: 'black', textTransform: 'none' }}>Crowded</Typography>
+                        <Typography variant="h4">Crowded</Typography>
                     </Button>
                 </Box>
                 <Box>
@@ -37,7 +37,7 @@ export default function SecondQuestion() {
                             }}
                             src={Discolored}
                         />
-                        <Typography sx={{ fontSize: '1rem', fontWeight: '400px', color: 'black', textTransform: 'none' }}>Discolored</Typography>
+                        <Typography variant="h4">Discolored</Typography>
                     </Button>
                 </Box>
                 <Box>
@@ -51,7 +51,7 @@ export default function SecondQuestion() {
                             }}
                             src={Spaced}
                         />
-                        <Typography sx={{ fontSize: '1rem', fontWeight: '400px', color: 'black', textTransform: 'none' }}>Spaced</Typography>
+                        <Typography variant="h4">Spaced</Typography>
                     </Button>
                 </Box>
                 <Box>
@@ -67,7 +67,7 @@ export default function SecondQuestion() {
                             }}
                             src={Protruding}
                         />
-                        <Typography sx={{ fontSize: '1rem', fontWeight: '400px', color: 'black', textTransform: 'none' }}>Protruding</Typography>
+                        <Typography variant="h4">Protruding</Typography>
                     </Button>
                 </Box>
             </Box>

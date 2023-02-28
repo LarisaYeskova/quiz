@@ -15,8 +15,8 @@ export default function FirstQuestion() {
                 />
             </Box>
             <Box>
-                <Typography sx={{ fontSize: '1.2rem', fontWeight: '700px' }}>WELCOME TO TENDER</Typography>
-                <Typography sx={{ fontSize: '0.9rem', fontWeight: '400px', color: '#afabaa' }}>Take our 30-second survey to learn if you're a candidate.</Typography>
+                <Typography variant='h3'>WELCOME TO TENDER</Typography>
+                <Typography variant='h5'>Take our 30-second survey to learn if you're a candidate.</Typography>
             </Box>
             <Box>
 
