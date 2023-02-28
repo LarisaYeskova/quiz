@@ -39,9 +39,9 @@ export default function Main() {
                     ))}
                 </Stepper>
             </Box>
-            <FirstQuestion />
-            {/* <SecondQuestion />
-            <ThirdQuestion />
+            {/* <FirstQuestion /> */}
+            <SecondQuestion />
+            {/* <ThirdQuestion />
             <FourthQuestion />
             <FifthQuestion />
             <SixQuestion />
