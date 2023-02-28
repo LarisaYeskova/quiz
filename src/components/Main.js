@@ -15,28 +15,30 @@ const steps = [1, 2, 3, 4, 5, 6, 7]
 export default function Main() {
     return (
         <Box sx={{ margin: '0px 20px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100vh' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Box sx={{ position: 'absolute' }}>
-                    <Button sx={{ color: 'grey' }}><KeyboardBackspaceIcon />Back</Button>
+            <Box>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ position: 'absolute' }}>
+                        <Button sx={{ color: 'grey' }}><KeyboardBackspaceIcon />Back</Button>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                        <img
+                            style={{
+                                textAlign: 'center',
+                                maxWidth: '120px',
+                                height: '50px'
+                            }}
+                            src={Logo}
+                        />
+                    </Box>
                 </Box>
-                <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                    <img
-                        style={{
-                            textAlign: 'center',
-                            maxWidth: '120px',
-                            height: '50px'
-                        }}
-                        src={Logo}
-                    />
-                </Box>
+                <Stepper alternativeLabel activeStep={1} >
+                    {steps.map((label) => (
+                        <Step key={label}>
+                            <StepLabel />
+                        </Step>
+                    ))}
+                </Stepper>
             </Box>
-            <Stepper alternativeLabel activeStep={1} >
-                {steps.map((label) => (
-                    <Step key={label}>
-                        <StepLabel />
-                    </Step>
-                ))}
-            </Stepper>
             <FirstQuestion />
             {/* <SecondQuestion />
             <ThirdQuestion />
@@ -44,8 +46,8 @@ export default function Main() {
             <FifthQuestion />
             <SixQuestion />
             <SeventhQuestion /> */}
-            <Box>
-                <Button sx={{ backgroundColor: '#f64851', color: '#ffff', borderRadius: '35px' }}>Coninue</Button>
+            <Box sx={{ marginBottom: '20px' }}>
+                <Button sx={{ backgroundColor: '#f64851', color: '#ffff', borderRadius: '35px', minWidth: '250px', maxWidth: '300px', padding: '15px 20px', textTransform: 'none', fontSize: '1rem', fontWeight: '500' }}>Continue</Button>
             </Box>
         </Box>
     )
