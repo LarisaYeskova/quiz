@@ -7,6 +7,7 @@ import Protruding from "../../assets/protruding.gif"
 export default function SecondQuestion() {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            2
             <Box>
                 <Typography variant='h3'>How would you describe your teeth?</Typography>
                 <Typography variant='h5'>Choose any that apply.</Typography>

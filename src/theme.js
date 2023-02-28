@@ -36,6 +36,20 @@ const theme = createTheme({
       lineHeight: '18px',
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'uppercase',
+          fontSize: '16px',
+          lineHeight: '24px',
+          textDecoration: 'none',
+          borderRadius: '0px',
+          color: '#0C0C0C',
+        },
+      },
+    },
+  }
 });
 
 export default theme;

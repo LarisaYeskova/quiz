@@ -9,11 +9,14 @@ import ThirdQuestion from "./questions/QuestionThird";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Logo from "../assets/logo.png"
 import { useState } from "react";
-
+import EighthQuestion from "./questions/QuestionEighth";
+import NinthQuestion from "./questions/QuestionNinth";
 
 
 
 export default function Main() {
+
+    const steps = [1, 2, 3, 4, 5, 6, 7]
     const [currentQuestion, setCurrentQuestion] = useState(1);
     const getQuestion = (question) => {
         switch (question) {
@@ -31,6 +34,10 @@ export default function Main() {
                 return <SixQuestion />;
             case 7:
                 return <SeventhQuestion />;
+            case 8:
+                return <EighthQuestion />;
+            case 9:
+                return <NinthQuestion />;
 
             default:
                 return null;
@@ -57,13 +64,13 @@ export default function Main() {
                         />
                     </Box>
                 </Box>
-                {/* <Stepper alternativeLabel activeStep={1} >
-                    {currentQuestion.map((label) => (
+                <Stepper alternativeLabel activeStep={1} >
+                    {steps.map((label) => (
                         <Step key={label}>
                             <StepLabel />
                         </Step>
                     ))}
-                </Stepper> */}
+                </Stepper>
             </Box>
             {getQuestion(currentQuestion)}
             <Box sx={{ marginBottom: '20px' }}>

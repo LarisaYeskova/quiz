@@ -4,6 +4,7 @@ import Smile from "../../assets/sans_titre.png"
 export default function FirstQuestion() {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            1
             <Box>
                 <img
                     style={{
