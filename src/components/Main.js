@@ -27,13 +27,13 @@ export default function Main() {
     const getQuestion = (question) => {
         switch (question.type) {
             case questionTypes.multiChoiceImg:
-                return <MultiChoiceImgQuestion {...question} />
+                return <MultiChoiceImgQuestion {...question} onChange={onChange} />
             case questionTypes.closed:
                 return <ClosedQuestion {...question} onChange={onChange} />
             case questionTypes.multiChoice:
                 return <MultiChoiceQuestion {...question} onChange={onChange} />
             case questionTypes.oneChoice:
-                return <OneChoiceQuestion {...question} />
+                return <OneChoiceQuestion {...question} onChange={onChange} />
             default:
                 return null;
         }
@@ -77,7 +77,7 @@ export default function Main() {
             </Box>
 
             {getQuestion(currentQuestion)}
-            <Box sx={styles.marginBottom20}>
+            <Box sx={[styles.marginBottom20, styles.buttonMediaBox]}>
                 <Button
                     onClick={() => setQuestionNumber(questionNumber + 1)}
                     sx={styles.mainButton}>Continue</Button>

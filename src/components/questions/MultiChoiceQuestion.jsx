@@ -28,7 +28,8 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                                         }
 
                                     }}
-                                    fullWidth sx={styles.questionButtonType2}>
+                                    fullWidth
+                                    sx={[styles.questionButtonType2, { border: option.text === foundAnswer?.text ? '2px solid #f64851' : 'none' }]}>
                                     {hasCheckBox && (
                                         <Box sx={styles.checkBoxContainer}>
                                             <Checkbox

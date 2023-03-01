@@ -24,6 +24,11 @@ export const styles = {
             backgroundColor: '#f64851'
         },
     },
+    buttonMediaBox: {
+        '@media screen and (max-height: 1000px)': {
+            marginTop: '20px'
+        },
+    },
     mainButtonBack: {
         padding: '0px'
     },

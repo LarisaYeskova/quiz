@@ -39,10 +39,10 @@ export const QUESTIONS = [
         title: 'Have you ever worn braces?',
         options: [
             {
-                text: 'yes',
+                text: 'Yes',
             },
             {
-                text: 'no',
+                text: 'No',
             }
         ],
         answer: '',
@@ -52,10 +52,10 @@ export const QUESTIONS = [
         title: 'Do you have a permanent retainer?',
         options: [
             {
-                text: 'yes',
+                text: 'Yes',
             },
             {
-                text: 'no',
+                text: 'No',
             }
         ],
         answer: '',
@@ -134,7 +134,7 @@ export const QUESTIONS = [
             },
             {
                 checkBox: false,
-                text: 'How candid is diffrent from competitors',
+                text: 'How tender is diffrent from competitors',
             },
             {
                 checkBox: false,

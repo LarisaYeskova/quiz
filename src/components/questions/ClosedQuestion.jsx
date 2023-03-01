@@ -12,12 +12,11 @@ export default function ClosedQuestion({ title, options, onChange, answer }) {
                 </Box>
                 <Box>
                     {options.map((option) => (
-                        <Box className={option.text === answer?.text ? 'active' : ''}>
+                        <Box>
                             <Button onClick={() => {
                                 onChange(option)
                             }}
-
-                                fullWidth sx={styles.questionButtonType1}>
+                                fullWidth sx={[styles.questionButtonType1, { border: option.text === answer?.text ? '2px solid #f64851' : 'none' }]}>
                                 {option.text}
                             </Button>
                         </Box>
