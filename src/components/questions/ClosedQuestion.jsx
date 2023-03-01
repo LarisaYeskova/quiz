@@ -2,7 +2,8 @@ import { Box, Button, Typography } from "@mui/material"
 import { styles } from "./questions.styles"
 
 
-export default function ClosedQuestion({ title, options, onChange }) {
+export default function ClosedQuestion({ title, options, onChange, answer }) {
+    console.log(answer)
     return (
         <Box sx={styles.questionContainer}>
             <Box sx={styles.mediaBox}>
@@ -11,8 +12,12 @@ export default function ClosedQuestion({ title, options, onChange }) {
                 </Box>
                 <Box>
                     {options.map((option) => (
-                        <Box>
-                            <Button fullWidth sx={styles.questionButtonType1}>
+                        <Box className={option.text === answer?.text ? 'active' : ''}>
+                            <Button onClick={() => {
+                                onChange(option)
+                            }}
+
+                                fullWidth sx={styles.questionButtonType1}>
                                 {option.text}
                             </Button>
                         </Box>

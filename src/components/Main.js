@@ -16,8 +16,11 @@ export default function Main() {
     const [questions, setQuestions] = useState(QUESTIONS)
     const steps = [1, 2, 3, 4, 5, 6, 7]
     const [questionNumber, setQuestionNumber] = useState(1);
-    const onChange = () => {
-
+    const onChange = (answer) => {
+        let newQuestion = { ...questions[questionNumber - 1], answer };
+        let newQuestions = [...questions.slice(0, questionNumber - 1), newQuestion, ...questions.slice(questionNumber)];
+        setQuestions(newQuestions);
+        // console.log(questions)
     }
 
     const currentQuestion = questions[questionNumber - 1]
@@ -26,9 +29,9 @@ export default function Main() {
             case questionTypes.multiChoiceImg:
                 return <MultiChoiceImgQuestion {...question} />
             case questionTypes.closed:
-                return <ClosedQuestion {...question} />
+                return <ClosedQuestion {...question} onChange={onChange} />
             case questionTypes.multiChoice:
-                return <MultiChoiceQuestion {...question} />
+                return <MultiChoiceQuestion {...question} onChange={onChange} />
             case questionTypes.oneChoice:
                 return <OneChoiceQuestion {...question} />
             default:
@@ -36,7 +39,10 @@ export default function Main() {
         }
     };
 
+    console.log(questions.map((question) => question.answer))
 
+    // console.log(questionNumber)
+    // console.log(currentQuestion)
     return (
         <Box sx={styles.mainContainer}>
             <Box>

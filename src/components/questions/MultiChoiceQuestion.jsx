@@ -3,7 +3,7 @@ import Checkbox, { checkboxClasses } from "@mui/material/Checkbox";
 import { styles } from "./questions.styles";
 
 
-export default function MultiChoiceQuestion({ title, subTitle, options, onChange, hasCheckBox, hasCustomAnswer }) {
+export default function MultiChoiceQuestion({ title, subTitle, options, onChange, hasCheckBox, hasCustomAnswer, answer }) {
     return (
         <Box sx={styles.questionContainer}>
             <Box sx={styles.mediaBox}>
@@ -14,25 +14,37 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                     <Typography variant='h5'>{subTitle}</Typography>
                 </Box>
                 <Box>
-                    {options.map((option) => (
-                        <Box>
-                            <Button
-                                fullWidth sx={styles.questionButtonType2}>
-                                {hasCheckBox && (
-                                    <Box sx={styles.checkBoxContainer}>
-                                        <Checkbox
-                                            sx={[styles.checkBox, {
-                                                [`&, &.${checkboxClasses.checked}`]: {
-                                                    color: '#f64851',
-                                                }
-                                            }]} />
-                                    </Box>
-                                )
-                                }
-                                <Typography>{option.text}</Typography>
-                            </Button>
-                        </Box>
-                    ))}
+                    {options.map((option) => {
+                        const foundAnswer = answer.find(answr => answr?.text === option.text)
+                        return (
+                            <Box className={option.text === foundAnswer?.text ? 'active' : ''}>
+                                <Button
+                                    onClick={() => {
+                                        if (foundAnswer) {
+                                            const newAnswer = answer.filter((answr) => answr?.text !== option.text)
+                                            onChange(newAnswer)
+                                        } else {
+                                            onChange([...answer, option])
+                                        }
+
+                                    }}
+                                    fullWidth sx={styles.questionButtonType2}>
+                                    {hasCheckBox && (
+                                        <Box sx={styles.checkBoxContainer}>
+                                            <Checkbox
+                                                checked={!!foundAnswer}
+                                                sx={[styles.checkBox, {
+                                                    [`&, &.${checkboxClasses.checked}`]: {
+                                                        color: '#f64851',
+                                                    }
+                                                }]} />
+                                        </Box>
+                                    )}
+                                    <Typography>{option.text}</Typography>
+                                </Button>
+                            </Box>
+                        );
+                    })}
                     {hasCustomAnswer && (
                         <Box>
                             <Box sx={[styles.mb10, styles.mt30]}>
