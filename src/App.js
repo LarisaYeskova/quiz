@@ -6,7 +6,7 @@ import theme from './theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ backgroundColor: '#fff9f9' }} className="App">
+      <Box sx={{ backgroundColor: '#fff9f9', height: '100%' }} className="App">
         <Main />
       </Box>
     </ThemeProvider>
