@@ -6,7 +6,8 @@ import { QUESTIONS, questionTypes } from "../mocks/questions";
 import ClosedQuestion from "./questions/ClosedQuestion";
 import MultiChoiceQuestion from "./questions/MultiChoiceQuestion";
 import OneChoiceQuestion from "./questions/OneChoiceQuestion";
-import MultiChoiceImgQuestion from "./questions/MulitChoiceQuestionImg";
+import MultiChoiceImgQuestion from "./questions/MultiChoiceQuestionImg";
+import { styles } from './main.styles';
 
 
 
@@ -37,24 +38,25 @@ export default function Main() {
 
 
     return (
-        <Box sx={{ margin: '0px 20px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', minHeight: '100vh' }}>
+        <Box sx={styles.mainContainer}>
             <Box>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box sx={{ position: 'absolute' }}>
+                <Box sx={[styles.flex, styles.alignCenter]}>
+                    <Box sx={[styles.absolute, styles.mainButtonBack]}>
                         <Button
                             onClick={() => setQuestionNumber(questionNumber - 1)}
-                            sx={{ color: 'grey' }}>
+                            sx={[styles.redDefaultColor, styles.textTransformNone, styles.boxShadowDefault, styles.mainButtonBack]}>
                             <KeyboardBackspaceIcon />
-                            <Typography sx={{ color: 'grey', textTransform: 'none' }}>Back</Typography>
+                            <Typography variant="h4" sx={styles.redDefaultColor}>Back</Typography>
                         </Button>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                    <Box sx={[styles.flex, styles.justifyCenter, styles.fullWidth]}>
                         <img
                             style={{
                                 textAlign: 'center',
                                 maxWidth: '120px',
                                 height: '50px'
                             }}
+                            alt='logo'
                             src={Logo}
                         />
                     </Box>
@@ -69,13 +71,10 @@ export default function Main() {
             </Box>
 
             {getQuestion(currentQuestion)}
-            <Box sx={{ marginBottom: '20px' }}>
+            <Box sx={styles.marginBottom20}>
                 <Button
                     onClick={() => setQuestionNumber(questionNumber + 1)}
-                    sx={{
-                        backgroundColor: '#f64851', color: '#ffff', borderRadius: '35px', minWidth: '250px', maxWidth: '300px', padding: '15px 20px', textTransform: 'none', fontSize: '1rem', fontWeight: '500',
-                        ':hover': { minWidth: '255px', maxWidth: '305px', backgroundColor: '#f64851' },
-                    }}>Continue</Button>
+                    sx={styles.mainButton}>Continue</Button>
             </Box>
         </Box>
     )

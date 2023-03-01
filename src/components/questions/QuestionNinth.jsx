@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Grid, TextField, Typography } from "@mui/material"
+import { Box, TextField, Typography } from "@mui/material"
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function NinthQuestion() {

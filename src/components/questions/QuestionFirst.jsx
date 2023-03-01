@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import Smile from "../../assets/sans_titre.png"
 
 export default function FirstQuestion() {

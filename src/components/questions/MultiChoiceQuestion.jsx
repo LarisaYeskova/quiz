@@ -1,10 +1,12 @@
-import { Box, Button, Checkbox, Grid, TextField, Typography } from "@mui/material"
+import { Box, Button, TextField, Typography } from "@mui/material"
+import Checkbox, { checkboxClasses } from "@mui/material/Checkbox";
+import { styles } from "./questions.styles";
+
 
 export default function MultiChoiceQuestion({ title, subTitle, options, onChange, hasCheckBox, hasCustomAnswer }) {
-    console.log(options)
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <Box sx={{ maxWidth: '50%' }}>
+        <Box sx={styles.questionContainer}>
+            <Box sx={styles.mediaBox}>
                 <Box>
                     <Typography variant='h3'>{title}</Typography>
                 </Box>
@@ -14,15 +16,16 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                 <Box>
                     {options.map((option) => (
                         <Box>
-                            <Button fullWidth sx={{
-                                borderRadius: '6px', marginBottom: '20px', marginTop: '20px', backgroundColor: '#ffff', display: 'flex', alignItems: 'center', justifyContent: 'start', padding: '12px 4px',
-                                boxShadow: 'rgb(255 0 0 / 5%) 0px 6px 13px 0px, rgb(0 0 0 / 8%) 0px 1px 4px 0px', transition: 'all 0.08s ease-in-out 0s',
-                                ':hover': { boxShadow: 'rgb(255 0 0 / 5%) 0px 13px 22px 0px, rgb(0 0 0 / 3%) 0px 6px 24px 0px', background: '#ffff' },
-                                textTransform: 'none'
-                            }}>
+                            <Button
+                                fullWidth sx={styles.questionButtonType2}>
                                 {hasCheckBox && (
-                                    <Box sx={{ margin: '0px 10px', }}>
-                                        <Checkbox sx={{ color: '#f64851', width: '16px', height: '16px' }} />
+                                    <Box sx={styles.checkBoxContainer}>
+                                        <Checkbox
+                                            sx={[styles.checkBox, {
+                                                [`&, &.${checkboxClasses.checked}`]: {
+                                                    color: '#f64851',
+                                                }
+                                            }]} />
                                     </Box>
                                 )
                                 }
@@ -32,17 +35,17 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                     ))}
                     {hasCustomAnswer && (
                         <Box>
-                            <Box sx={{ marginBottom: '10px', marginTop: '30px' }}>
+                            <Box sx={[styles.mb10, styles.mt30]}>
                                 <Typography>Other</Typography>
                             </Box>
                             <Box>
-                                <TextField fullWidth sx={{
+                                <TextField fullWidth sx={[styles.questionTextField, {
                                     "& .MuiOutlinedInput-root.Mui-focused": {
                                         "& > fieldset": {
                                             borderColor: "#f64851"
                                         }
-                                    }, borderRadius: '6px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', border: '1px solid #dbdada', textTransform: 'none'
-                                }} />
+                                    },
+                                }]} />
                             </Box>
                         </Box>
                     )
