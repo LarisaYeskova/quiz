@@ -1,16 +1,7 @@
-import { Box, Button, Grid, Step, StepLabel, Stepper } from "@mui/material";
-import FifthQuestion from "./questions/QuestionFifth";
-import FirstQuestion from "./questions/QuestionFirst";
-import FourthQuestion from "./questions/QuestionFourth";
-import SecondQuestion from "./questions/QuestionSecond";
-import SeventhQuestion from "./questions/QuestionSeventh";
-import SixQuestion from "./questions/QuestionSix";
-import ThirdQuestion from "./questions/QuestionThird";
+import { Box, Button, Step, StepLabel, Stepper, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Logo from "../assets/logo.png"
 import { useState } from "react";
-import EighthQuestion from "./questions/QuestionEighth";
-import NinthQuestion from "./questions/QuestionNinth";
 import { QUESTIONS, questionTypes } from "../mocks/questions";
 import ClosedQuestion from "./questions/ClosedQuestion";
 import MultiChoiceQuestion from "./questions/MultiChoiceQuestion";
@@ -24,7 +15,9 @@ export default function Main() {
     const [questions, setQuestions] = useState(QUESTIONS)
     const steps = [1, 2, 3, 4, 5, 6, 7]
     const [questionNumber, setQuestionNumber] = useState(1);
+    const onChange = () => {
 
+    }
 
     const currentQuestion = questions[questionNumber - 1]
     const getQuestion = (question) => {
@@ -50,7 +43,10 @@ export default function Main() {
                     <Box sx={{ position: 'absolute' }}>
                         <Button
                             onClick={() => setQuestionNumber(questionNumber - 1)}
-                            sx={{ color: 'grey' }}><KeyboardBackspaceIcon />Back</Button>
+                            sx={{ color: 'grey' }}>
+                            <KeyboardBackspaceIcon />
+                            <Typography sx={{ color: 'grey', textTransform: 'none' }}>Back</Typography>
+                        </Button>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                         <img

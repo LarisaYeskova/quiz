@@ -32,6 +32,7 @@ export const QUESTIONS = [
                 text: 'Protruding',
             },
         ],
+        answer: [],
         type: questionTypes.multiChoiceImg
     },
     {
@@ -44,6 +45,7 @@ export const QUESTIONS = [
                 text: 'no',
             }
         ],
+        answer: '',
         type: questionTypes.closed
     },
     {
@@ -56,6 +58,7 @@ export const QUESTIONS = [
                 text: 'no',
             }
         ],
+        answer: '',
         type: questionTypes.closed
     },
     {
@@ -74,6 +77,7 @@ export const QUESTIONS = [
                 text: 'Not sure',
             }
         ],
+        answer: '',
         type: questionTypes.oneChoice
     },
     {
@@ -107,38 +111,42 @@ export const QUESTIONS = [
                 text: 'Influencer',
             },
         ],
+        answer: '',
         type: questionTypes.oneChoice
     },
     {
         title: 'Is there anything else you want to know about Tender?',
         subTitle: 'Choose any that apply.',
+        hasCheckBox: true,
+        hasCustomAnswer: true,
         options: [
             {
-                checkBox: true,
+                checkBox: false,
                 text: 'Insurance overview',
             },
             {
-                checkBox: true,
+                checkBox: false,
                 text: 'Photos of patient results',
             },
             {
-                checkBox: true,
+                checkBox: false,
                 text: 'Cost breakdown',
             },
             {
-                checkBox: true,
+                checkBox: false,
                 text: 'How candid is diffrent from competitors',
             },
             {
-                checkBox: true,
+                checkBox: false,
                 text: 'How aligners are made',
             },
             {
-                checkBox: true,
+                checkBox: false,
                 text: 'How Tender works',
             },
             //input
         ],
+        answer: [],
         type: questionTypes.multiChoice
     },
     {
@@ -166,6 +174,7 @@ export const QUESTIONS = [
                 text: '46+',
             },
         ],
+        answer: '',
         type: questionTypes.oneChoice
     },
 

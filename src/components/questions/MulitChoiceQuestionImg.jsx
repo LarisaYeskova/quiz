@@ -13,7 +13,11 @@ export default function MultiChoiceImgQuestion({ title, subTitle, options, onCha
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {options.map((option) => (
                         <Box>
-                            <Button sx={{ borderRadius: '6px', margin: '10px', minWidth: '120px', maxWidth: '120px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', padding: '12px 4px', boxShadow: 1 }}>
+                            <Button sx={{
+                                borderRadius: '6px', margin: '10px', minWidth: '120px', maxWidth: '120px', backgroundColor: '#ffff', display: 'flex', flexDirection: 'column', padding: '12px 4px',
+                                boxShadow: 'rgb(255 0 0 / 5%) 0px 6px 13px 0px, rgb(0 0 0 / 8%) 0px 1px 4px 0px', transition: 'all 0.08s ease-in-out 0s',
+                                ':hover': { boxShadow: 'rgb(255 0 0 / 5%) 0px 13px 22px 0px, rgb(0 0 0 / 3%) 0px 6px 24px 0px', background: '#ffff' }
+                            }}>
                                 <img
                                     style={{
                                         textAlign: 'center',
