@@ -65,7 +65,7 @@ export default function Main() {
                         />
                     </Box>
                 </Box>
-                <Line percent={5} strokeWidth={1} strokeColor="#f64851" trailColor='#fff9f9' />
+                <Line percent={5} strokeWidth={0.5} strokeColor="#f64851" trailColor='#fff9f9' />
             </Box>
 
             {getQuestion(currentQuestion)}
