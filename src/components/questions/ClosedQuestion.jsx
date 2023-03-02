@@ -11,7 +11,7 @@ export default function ClosedQuestion({ title, options, onChange, answer }) {
                 </Box>
                 <Box>
                     {options.map((option) => (
-                        <Box>
+                        <Box key={option.title}>
                             <Button onClick={() => {
                                 onChange(option)
                             }}

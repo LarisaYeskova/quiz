@@ -17,7 +17,7 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                     {options.map((option) => {
                         const foundAnswer = answer.find(answr => answr?.text === option.text)
                         return (
-                            <Box className={option.text === foundAnswer?.text ? 'active' : ''}>
+                            <Box key={option.title}>
                                 <Button
                                     onClick={() => {
                                         if (foundAnswer) {

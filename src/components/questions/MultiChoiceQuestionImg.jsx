@@ -15,7 +15,7 @@ export default function MultiChoiceImgQuestion({ title, subTitle, options, onCha
                     {options.map((option) => {
                         const foundAnswer = answer.find(answr => answr?.text === option.text)
                         return (
-                            <Box>
+                            <Box key={option.title}>
                                 <Button
                                     onClick={() => {
                                         if (foundAnswer) {

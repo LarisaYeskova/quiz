@@ -10,7 +10,7 @@ export default function OneChoiceQuestion({ title, options, onChange, answer }) 
                 </Box>
                 <Box>
                     {options.map((option) => (
-                        <Box>
+                        <Box key={option.title}>
                             <Button onClick={() => {
                                 onChange(option)
                             }}
