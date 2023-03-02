@@ -19,9 +19,13 @@ export default function Main() {
     const [questionNumber, setQuestionNumber] = useState(1);
     const [percentage, setPercentage] = useState(5)
 
-    const handleOnClick = () => {
+    const handleOnClickNext = () => {
         setQuestionNumber(questionNumber + 1)
         setPercentage(percentage + 10)
+    }
+    const handleOnClickBack = () => {
+        setQuestionNumber(questionNumber - 1)
+        setPercentage(percentage - 10)
     }
 
 
@@ -55,7 +59,7 @@ export default function Main() {
                 <Box sx={[styles.flex, styles.alignCenter, styles.marginBottom10]}>
                     <Box sx={[styles.absolute, styles.mainButtonBack]}>
                         <Button
-                            onClick={() => setQuestionNumber(questionNumber - 1)}
+                            onClick={handleOnClickBack}
                             sx={[styles.redDefaultColor, styles.textTransformNone, styles.boxShadowDefault, styles.mainButtonBack]}>
                             <KeyboardBackspaceIcon />
                             <Typography variant="h4" fontFamily={"Modern-Era-Regular"} sx={styles.redDefaultColor}>Back</Typography>
@@ -79,7 +83,7 @@ export default function Main() {
             {getQuestion(currentQuestion)}
             <Box sx={[styles.marginBottom20, styles.buttonMediaBox]}>
                 <Button
-                    onClick={handleOnClick}
+                    onClick={handleOnClickNext}
                     sx={styles.mainButton}>
                     <Typography fontFamily={'Modern-Era-Medium'}>Continue</Typography>
                 </Button>
