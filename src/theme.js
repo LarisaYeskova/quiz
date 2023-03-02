@@ -15,14 +15,14 @@ const theme = createTheme({
     },
     h3: {
       fontSize: '1.2rem',
-      fontWeight: '700px',
+      fontWeight: '700',
       textTransform: 'none',
       lineHeight: '1.7rem',
       marginBottom: '5px'
     },
     h4: {
       fontSize: '1rem',
-      fontWeight: '400px',
+      fontWeight: '500',
       textTransform: 'none',
       color: 'black'
     },
@@ -34,9 +34,10 @@ const theme = createTheme({
       lineHeight: '1.375rem'
     },
     h6: {
-      fontSize: '14px',
+      fontSize: '1rem',
       fontWeight: '400',
-      lineHeight: '18px',
+      textTransform: 'none',
+      color: 'rgba(0, 0, 0, 0.73)'
     },
   },
   components: {

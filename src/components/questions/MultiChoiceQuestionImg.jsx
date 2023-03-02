@@ -6,10 +6,10 @@ export default function MultiChoiceImgQuestion({ title, subTitle, options, onCha
         <Box sx={styles.questionContainer}>
             <Box sx={styles.mediaBox}>
                 <Box>
-                    <Typography variant='h3'>{title}</Typography>
+                    <Typography variant='h3' fontFamily={'Modern-Era-Medium'}>{title}</Typography>
                 </Box>
                 <Box>
-                    <Typography variant='h5'>{subTitle}</Typography>
+                    <Typography variant='h5' fontFamily={"Modern-Era-Regular"}>{subTitle}</Typography>
                 </Box>
                 <Box sx={styles.questionContainerImg}>
                     {options.map((option) => {
@@ -37,7 +37,7 @@ export default function MultiChoiceImgQuestion({ title, subTitle, options, onCha
                                         src={option.image}
                                         alt='option'
                                     />
-                                    <Typography variant="h4">{option.text}</Typography>
+                                    <Typography variant="h4" fontFamily={"Modern-Era-Regular"}>{option.text}</Typography>
                                 </Button>
                             </Box>
                         )

@@ -8,7 +8,7 @@ export default function ClosedQuestion({ title, options, onChange, answer }) {
         <Box sx={styles.questionContainer}>
             <Box sx={styles.mediaBox}>
                 <Box>
-                    <Typography variant='h3'>{title}</Typography>
+                    <Typography variant='h3' fontFamily={'Modern-Era-Medium'}>{title}</Typography>
                 </Box>
                 <Box>
                     {options.map((option) => (
@@ -17,7 +17,7 @@ export default function ClosedQuestion({ title, options, onChange, answer }) {
                                 onChange(option)
                             }}
                                 fullWidth sx={[styles.questionButtonType1, { border: option.text === answer?.text ? '2px solid #f64851' : 'none' }]}>
-                                {option.text}
+                                <Typography variant="h4" fontFamily={"Modern-Era-Regular"}>{option.text}</Typography>
                             </Button>
                         </Box>
                     ))}

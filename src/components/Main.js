@@ -52,7 +52,7 @@ export default function Main() {
                             onClick={() => setQuestionNumber(questionNumber - 1)}
                             sx={[styles.redDefaultColor, styles.textTransformNone, styles.boxShadowDefault, styles.mainButtonBack]}>
                             <KeyboardBackspaceIcon />
-                            <Typography variant="h4" sx={styles.redDefaultColor}>Back</Typography>
+                            <Typography variant="h4" fontFamily={"Modern-Era-Regular"} sx={styles.redDefaultColor}>Back</Typography>
                         </Button>
                     </Box>
                     <Box sx={[styles.flex, styles.justifyCenter, styles.fullWidth]}>
@@ -80,7 +80,9 @@ export default function Main() {
             <Box sx={[styles.marginBottom20, styles.buttonMediaBox]}>
                 <Button
                     onClick={() => setQuestionNumber(questionNumber + 1)}
-                    sx={styles.mainButton}>Continue</Button>
+                    sx={styles.mainButton}>
+                    <Typography fontFamily={'Modern-Era-Medium'}>Continue</Typography>
+                </Button>
             </Box>
         </Box>
     )

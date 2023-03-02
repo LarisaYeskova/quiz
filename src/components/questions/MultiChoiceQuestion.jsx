@@ -8,10 +8,10 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
         <Box sx={styles.questionContainer}>
             <Box sx={styles.mediaBox}>
                 <Box>
-                    <Typography variant='h3'>{title}</Typography>
+                    <Typography variant='h3' fontFamily={'Modern-Era-Medium'}>{title}</Typography>
                 </Box>
                 <Box>
-                    <Typography variant='h5'>{subTitle}</Typography>
+                    <Typography variant='h5' fontFamily={"Modern-Era-Regular"}>{subTitle}</Typography>
                 </Box>
                 <Box>
                     {options.map((option) => {
@@ -41,7 +41,7 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                                                 }]} />
                                         </Box>
                                     )}
-                                    <Typography>{option.text}</Typography>
+                                    <Typography variant="h4" fontFamily={"Modern-Era-Regular"}>{option.text}</Typography>
                                 </Button>
                             </Box>
                         );
@@ -49,7 +49,7 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                     {hasCustomAnswer && (
                         <Box>
                             <Box sx={[styles.mb10, styles.mt30]}>
-                                <Typography>Other</Typography>
+                                <Typography variant="h6" fontFamily={"Modern-Era-Regular"}>Other</Typography>
                             </Box>
                             <Box>
                                 <TextField fullWidth sx={[styles.questionTextField, {

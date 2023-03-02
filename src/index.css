@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Modern-Era-Medium";
+  src: local("Modern-Era-Medium"),
+    url(./assets/Modern\ Era\ Medium.woff2.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Modern-Era-Regular";
+  src: local("Modern-Era-Regular"),
+    url(./assets//Modern\ Era\ Regular.woff2.ttf) format("opentype");
+}
