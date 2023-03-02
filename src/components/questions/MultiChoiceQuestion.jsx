@@ -52,13 +52,18 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                                 <Typography variant="h6" fontFamily={"Modern-Era-Regular"}>Other</Typography>
                             </Box>
                             <Box>
-                                <TextField fullWidth sx={[styles.questionTextField, {
-                                    "& .MuiOutlinedInput-root.Mui-focused": {
-                                        "& > fieldset": {
-                                            borderColor: "#f64851"
-                                        }
-                                    },
-                                }]} />
+                                <TextField
+                                    multiline
+                                    maxRows={4}
+                                    fullWidth
+                                    sx={[styles.questionTextField, {
+                                        "& .MuiOutlinedInput-root.Mui-focused": {
+                                            "& > fieldset": {
+                                                borderColor: "#f64851"
+                                            }
+                                        },
+
+                                    }]} />
                             </Box>
                         </Box>
                     )

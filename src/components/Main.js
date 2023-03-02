@@ -8,7 +8,10 @@ import MultiChoiceQuestion from "./questions/MultiChoiceQuestion";
 import OneChoiceQuestion from "./questions/OneChoiceQuestion";
 import MultiChoiceImgQuestion from "./questions/MultiChoiceQuestionImg";
 import { Line } from 'rc-progress';
-import { styles } from './main.styles';
+import { mainStyles } from './main.styles';
+import Welcome from "./questions/Welcome";
+import QuizForm from "./questions/QuizForm";
+
 
 
 
@@ -16,7 +19,7 @@ import { styles } from './main.styles';
 export default function Main() {
     const [questions, setQuestions] = useState(QUESTIONS)
     const steps = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    const [questionNumber, setQuestionNumber] = useState(1);
+    const [questionNumber, setQuestionNumber] = useState(0);
     const [percentage, setPercentage] = useState(5)
 
     const handleOnClickNext = () => {
@@ -27,7 +30,13 @@ export default function Main() {
         setQuestionNumber(questionNumber - 1)
         setPercentage(percentage - 10)
     }
-
+    const doesAnswerExist = () => {
+        if (!currentQuestion) return false;
+        if (Array.isArray(currentQuestion.answer)) {
+            return !!currentQuestion.answer.length;
+        }
+        return !!currentQuestion.answer?.text?.trim();
+    }
 
     const onChange = (answer) => {
         let newQuestion = { ...questions[questionNumber - 1], answer };
@@ -50,22 +59,27 @@ export default function Main() {
                 return null;
         }
     };
-    console.log(questionNumber)
-    // console.log(questions.map((question) => question.answer))
+    // console.log(questionNumber)
+    console.log(questions.map((question) => question.answer))
 
     return (
-        <Box sx={styles.mainContainer}>
+        <Box sx={mainStyles.mainContainer}>
             <Box>
-                <Box sx={[styles.flex, styles.alignCenter, styles.marginBottom10]}>
-                    <Box sx={[styles.absolute, styles.mainButtonBack]}>
+                <Box sx={[mainStyles.flex, mainStyles.alignCenter, mainStyles.marginBottom10]}>
+                    <Box sx={[mainStyles.absolute, mainStyles.mainButtonBack]}>
                         <Button
+                            disabled={questionNumber <= 0}
                             onClick={handleOnClickBack}
-                            sx={[styles.redDefaultColor, styles.textTransformNone, styles.boxShadowDefault, styles.mainButtonBack]}>
+                            sx={[
+                                mainStyles.redDefaultColor,
+                                mainStyles.textTransformNone,
+                                questionNumber <= 0 ? { boxShadow: 'none' } : mainStyles.boxShadowDefault,
+                                mainStyles.mainButtonBack]}>
                             <KeyboardBackspaceIcon />
-                            <Typography variant="h4" fontFamily={"Modern-Era-Regular"} sx={styles.redDefaultColor}>Back</Typography>
+                            Back
                         </Button>
                     </Box>
-                    <Box sx={[styles.flex, styles.justifyCenter, styles.fullWidth]}>
+                    <Box sx={[mainStyles.flex, mainStyles.justifyCenter, mainStyles.fullWidth]}>
                         <img
                             style={{
                                 textAlign: 'center',
@@ -78,16 +92,30 @@ export default function Main() {
                     </Box>
                 </Box>
                 <Line percent={percentage} strokeWidth={0.5} strokeColor="#f64851" trailColor='#fff9f9' />
-            </Box>
 
-            {getQuestion(currentQuestion)}
-            <Box sx={[styles.marginBottom20, styles.buttonMediaBox]}>
-                <Button
-                    onClick={handleOnClickNext}
-                    sx={styles.mainButton}>
-                    <Typography fontFamily={'Modern-Era-Medium'}>Continue</Typography>
-                </Button>
             </Box>
-        </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+                {questionNumber === 0 &&
+                    <Welcome />
+                }
+                {questions.length + 1 === questionNumber &&
+                    <QuizForm />
+                }
+                {!!currentQuestion && getQuestion(currentQuestion)}
+            </Box>
+            {(questionNumber === 0 || doesAnswerExist()) ?
+                <Box sx={[mainStyles.marginBottom20, mainStyles.buttonMediaBox]}>
+                    <Button
+                        onClick={handleOnClickNext}
+                        sx={mainStyles.mainButton}>
+                        <Typography fontFamily={'Modern-Era-Medium'}>Continue</Typography>
+                    </Button>
+                </Box>
+                :
+                <Box sx={{ height: '94px' }}></Box>
+            }
+
+
+        </Box >
     )
 }

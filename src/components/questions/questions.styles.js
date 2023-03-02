@@ -72,6 +72,11 @@ export const styles = {
     checkBoxContainer: {
         margin: '0px 10px',
     },
+    CheckCircle: {
+        color: '#f64851',
+        width: '50px',
+        height: '50px'
+    },
     questionTextField: {
         borderRadius: '6px',
         backgroundColor: '#ffff',
@@ -85,10 +90,24 @@ export const styles = {
         width: '16px',
         height: '16px',
     },
+    textFieldLabel: {
+        textAlign: 'start',
+        marginBottom: '10px'
+    },
     mb10: {
         marginBottom: '10px'
     },
+    mb15: {
+        marginBottom: '15px'
+    },
+    mt20: {
+        marginTop: '20px',
+    },
     mt30: {
         marginTop: '30px'
+    },
+    bgWhite: {
+        backgroundColor: '#ffff'
     }
+
 };

@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material"
 import Smile from "../../assets/sans_titre.png"
+import { styles } from "./questions.styles"
 
-export default function FirstQuestion() {
+export default function Welcome() {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            1
+        <Box sx={styles.questionContainer}>
             <Box>
                 <img
                     style={{
@@ -13,6 +13,7 @@ export default function FirstQuestion() {
                         height: '150px'
                     }}
                     src={Smile}
+                    alt='smile'
                 />
             </Box>
             <Box>

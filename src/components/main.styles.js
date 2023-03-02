@@ -1,4 +1,4 @@
-export const styles = {
+export const mainStyles = {
     mainContainer: {
         margin: '0px 20px',
         textAlign: 'center',

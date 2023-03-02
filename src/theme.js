@@ -39,6 +39,12 @@ const theme = createTheme({
       textTransform: 'none',
       color: 'rgba(0, 0, 0, 0.73)'
     },
+    h7: {
+      fontSize: '0.8rem',
+      fontWeight: '400',
+      textTransform: 'none',
+      color: 'rgba(0, 0, 0, 0.5)'
+    }
   },
   components: {
     MuiButton: {
