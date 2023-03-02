@@ -9,7 +9,7 @@ import ReactDOMServer from 'react-dom/server';
 import * as yup from 'yup';
 emailjs.init("nofdEkrjvZQrrpraI");
 
-export default function QuizForm({ questions }) {
+export default function QuizForm({ questions, setQuestionNumber, setPercentage }) {
     const [state, setState] = useState({ name: '', email: '', zipCode: '' })
     const [validateState, setValidateState] = useState({ errName: '', errEmail: '', errZipCode: '' });
     const schema = yup.object().shape({
@@ -25,7 +25,11 @@ export default function QuizForm({ questions }) {
             }, function (error) {
                 console.log('FAILED...', error);
             });
+        setQuestionNumber(0)
+        setPercentage(10)
     }
+
+
 
     return (
         <Box sx={styles.questionContainer}>

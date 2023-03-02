@@ -107,7 +107,7 @@ export default function Main() {
                     <Welcome />
                 }
                 {questions.length + 1 === questionNumber &&
-                    <QuizForm questions={questions} />
+                    <QuizForm questions={questions} setQuestionNumber={setQuestionNumber} setPercentage={setPercentage} />
                 }
                 {!!currentQuestion && getQuestion(currentQuestion)}
             </Box>
