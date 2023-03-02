@@ -17,8 +17,8 @@ export default function Welcome() {
                 />
             </Box>
             <Box>
-                <Typography variant='h3'>Welcome to Tender</Typography>
-                <Typography variant='h5'>Take our 30-second survey to learn if you're a candidate.</Typography>
+                <Typography variant='h3' fontFamily={'Modern-Era-Medium'}>Welcome to Tender</Typography>
+                <Typography variant='h5' fontFamily={"Modern-Era-Regular"}>Take our 30-second survey to learn if you're a candidate.</Typography>
             </Box>
             <Box>
 

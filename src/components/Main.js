@@ -11,7 +11,7 @@ import { Line } from 'rc-progress';
 import { mainStyles } from './main.styles';
 import Welcome from "./questions/Welcome";
 import QuizForm from "./questions/QuizForm";
-import EmailTemplate from "../EmailTemplate";
+import Thanks from "./questions/Thanks";
 
 
 
@@ -24,7 +24,7 @@ export default function Main() {
 
     const handleOnClickNext = () => {
         setQuestionNumber(questionNumber + 1)
-        setPercentage(percentage + 11.2)
+        setPercentage(percentage + 10)
     }
     const handleOnClickBack = () => {
         setQuestionNumber(questionNumber - 1)
@@ -53,7 +53,7 @@ export default function Main() {
         let newQuestions = [...questions.slice(0, questionNumber - 1), newQuestion, ...questions.slice(questionNumber)];
         setQuestions(newQuestions);
     }
-
+    console.log(questionNumber)
     const currentQuestion = questions[questionNumber - 1]
     const getQuestion = (question) => {
         switch (question.type) {
@@ -107,7 +107,10 @@ export default function Main() {
                     <Welcome />
                 }
                 {questions.length + 1 === questionNumber &&
-                    <QuizForm questions={questions} setQuestionNumber={setQuestionNumber} setPercentage={setPercentage} />
+                    <QuizForm handleOnClickNext={handleOnClickNext} questions={questions} />
+                }
+                {questions.length + 2 === questionNumber &&
+                    <Thanks setQuestionNumber={setQuestionNumber} setPercentage={setPercentage} />
                 }
                 {!!currentQuestion && getQuestion(currentQuestion)}
             </Box>
