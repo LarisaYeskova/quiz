@@ -31,7 +31,7 @@ export default function Thanks({ setQuestionNumber, setPercentage }) {
             <Box>
                 <Button
                     onClick={backToTop}
-                    sx={mainStyles.mainButton}>
+                    sx={[mainStyles.mainButton, styles.mt20]}>
                     <Typography fontFamily={'Modern-Era-Medium'}>Continue</Typography>
                 </Button>
             </Box>
