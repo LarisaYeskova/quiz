@@ -144,8 +144,8 @@ export const QUESTIONS = [
                 checkBox: false,
                 text: 'How Tender works',
             },
-            //input
         ],
+        other: '',
         answer: [],
         type: questionTypes.multiChoice
     },

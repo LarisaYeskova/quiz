@@ -23,6 +23,10 @@ export const mainStyles = {
             maxWidth: '305px',
             backgroundColor: '#f64851'
         },
+        ":disabled": {
+            backgroundColor: '#e1e7f3',
+            color: '#717881'
+        }
     },
     buttonMediaBox: {
         '@media screen and (max-height: 1000px)': {

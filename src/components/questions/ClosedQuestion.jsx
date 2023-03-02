@@ -3,7 +3,6 @@ import { styles } from "./questions.styles"
 
 
 export default function ClosedQuestion({ title, options, onChange, answer }) {
-    console.log(answer)
     return (
         <Box sx={styles.questionContainer}>
             <Box sx={styles.mediaBox}>

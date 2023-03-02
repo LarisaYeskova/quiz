@@ -3,7 +3,7 @@ import Checkbox, { checkboxClasses } from "@mui/material/Checkbox";
 import { styles } from "./questions.styles";
 
 
-export default function MultiChoiceQuestion({ title, subTitle, options, onChange, hasCheckBox, hasCustomAnswer, answer }) {
+export default function MultiChoiceQuestion({ title, subTitle, options, onChange, hasCheckBox, hasCustomAnswer, answer, onChangeOther, other }) {
     return (
         <Box sx={styles.questionContainer}>
             <Box sx={styles.mediaBox}>
@@ -53,6 +53,10 @@ export default function MultiChoiceQuestion({ title, subTitle, options, onChange
                             </Box>
                             <Box>
                                 <TextField
+                                    onChange={({ target: { value } }) => {
+                                        onChangeOther(value.trim())
+                                    }}
+                                    value={other}
                                     multiline
                                     maxRows={4}
                                     fullWidth

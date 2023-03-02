@@ -11,6 +11,7 @@ import { Line } from 'rc-progress';
 import { mainStyles } from './main.styles';
 import Welcome from "./questions/Welcome";
 import QuizForm from "./questions/QuizForm";
+import EmailTemplate from "../EmailTemplate";
 
 
 
@@ -18,13 +19,12 @@ import QuizForm from "./questions/QuizForm";
 
 export default function Main() {
     const [questions, setQuestions] = useState(QUESTIONS)
-    const steps = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     const [questionNumber, setQuestionNumber] = useState(0);
-    const [percentage, setPercentage] = useState(5)
+    const [percentage, setPercentage] = useState(10)
 
     const handleOnClickNext = () => {
         setQuestionNumber(questionNumber + 1)
-        setPercentage(percentage + 10)
+        setPercentage(percentage + 11.2)
     }
     const handleOnClickBack = () => {
         setQuestionNumber(questionNumber - 1)
@@ -32,14 +32,24 @@ export default function Main() {
     }
     const doesAnswerExist = () => {
         if (!currentQuestion) return false;
+        if (currentQuestion.other) {
+            return true;
+        }
         if (Array.isArray(currentQuestion.answer)) {
             return !!currentQuestion.answer.length;
         }
         return !!currentQuestion.answer?.text?.trim();
+
     }
 
     const onChange = (answer) => {
         let newQuestion = { ...questions[questionNumber - 1], answer };
+        let newQuestions = [...questions.slice(0, questionNumber - 1), newQuestion, ...questions.slice(questionNumber)];
+        setQuestions(newQuestions);
+    }
+
+    const onChangeOther = (other) => {
+        let newQuestion = { ...questions[questionNumber - 1], other };
         let newQuestions = [...questions.slice(0, questionNumber - 1), newQuestion, ...questions.slice(questionNumber)];
         setQuestions(newQuestions);
     }
@@ -52,15 +62,13 @@ export default function Main() {
             case questionTypes.closed:
                 return <ClosedQuestion {...question} onChange={onChange} />
             case questionTypes.multiChoice:
-                return <MultiChoiceQuestion {...question} onChange={onChange} />
+                return <MultiChoiceQuestion {...question} onChange={onChange} onChangeOther={onChangeOther} />
             case questionTypes.oneChoice:
                 return <OneChoiceQuestion {...question} onChange={onChange} />
             default:
                 return null;
         }
     };
-    // console.log(questionNumber)
-    console.log(questions.map((question) => question.answer))
 
     return (
         <Box sx={mainStyles.mainContainer}>
@@ -99,7 +107,7 @@ export default function Main() {
                     <Welcome />
                 }
                 {questions.length + 1 === questionNumber &&
-                    <QuizForm />
+                    <QuizForm questions={questions} />
                 }
                 {!!currentQuestion && getQuestion(currentQuestion)}
             </Box>
@@ -114,8 +122,6 @@ export default function Main() {
                 :
                 <Box sx={{ height: '94px' }}></Box>
             }
-
-
         </Box >
     )
 }
