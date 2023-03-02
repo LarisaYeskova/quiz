@@ -7,6 +7,7 @@ import ClosedQuestion from "./questions/ClosedQuestion";
 import MultiChoiceQuestion from "./questions/MultiChoiceQuestion";
 import OneChoiceQuestion from "./questions/OneChoiceQuestion";
 import MultiChoiceImgQuestion from "./questions/MultiChoiceQuestionImg";
+import { Line, Circle } from 'rc-progress';
 import { styles } from './main.styles';
 
 
@@ -14,13 +15,12 @@ import { styles } from './main.styles';
 
 export default function Main() {
     const [questions, setQuestions] = useState(QUESTIONS)
-    const steps = [1, 2, 3, 4, 5, 6, 7]
+    const steps = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     const [questionNumber, setQuestionNumber] = useState(1);
     const onChange = (answer) => {
         let newQuestion = { ...questions[questionNumber - 1], answer };
         let newQuestions = [...questions.slice(0, questionNumber - 1), newQuestion, ...questions.slice(questionNumber)];
         setQuestions(newQuestions);
-        // console.log(questions)
     }
 
     const currentQuestion = questions[questionNumber - 1]
@@ -41,12 +41,10 @@ export default function Main() {
 
     console.log(questions.map((question) => question.answer))
 
-    // console.log(questionNumber)
-    // console.log(currentQuestion)
     return (
         <Box sx={styles.mainContainer}>
             <Box>
-                <Box sx={[styles.flex, styles.alignCenter]}>
+                <Box sx={[styles.flex, styles.alignCenter, styles.marginBottom10]}>
                     <Box sx={[styles.absolute, styles.mainButtonBack]}>
                         <Button
                             onClick={() => setQuestionNumber(questionNumber - 1)}
@@ -67,13 +65,7 @@ export default function Main() {
                         />
                     </Box>
                 </Box>
-                <Stepper alternativeLabel activeStep={1} >
-                    {steps.map((label) => (
-                        <Step key={label}>
-                            <StepLabel />
-                        </Step>
-                    ))}
-                </Stepper>
+                <Line percent={5} strokeWidth={1} strokeColor="#f64851" trailColor='#fff9f9' />
             </Box>
 
             {getQuestion(currentQuestion)}

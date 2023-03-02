@@ -62,4 +62,7 @@ export const styles = {
     marginBottom20: {
         marginBottom: '20px'
     },
+    marginBottom10: {
+        marginBottom: '10px'
+    }
 };
