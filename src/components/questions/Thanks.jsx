@@ -15,8 +15,9 @@ export default function Thanks({ setQuestionNumber, setPercentage }) {
                 <img
                     style={{
                         textAlign: 'center',
-                        width: '500px',
-                        height: '200px'
+                        minWidth: '280px',
+                        maxWidth: '300px',
+                        height: '150px',
                     }}
                     src={Smile}
                     alt='smile'

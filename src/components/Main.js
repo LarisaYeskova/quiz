@@ -87,7 +87,7 @@ export default function Main() {
                             Back
                         </Button>
                     </Box>
-                    <Box sx={[mainStyles.flex, mainStyles.justifyCenter, mainStyles.fullWidth]}>
+                    <Box sx={[mainStyles.flex, mainStyles.justifyCenter, mainStyles.fullWidth, mainStyles.titleMediaBox]}>
                         <img
                             style={{
                                 textAlign: 'center',

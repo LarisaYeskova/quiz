@@ -26,7 +26,23 @@ export const mainStyles = {
         ":disabled": {
             backgroundColor: '#e1e7f3',
             color: '#717881'
-        }
+        },
+        '@media screen and (max-width: 500px)': {
+            minWidth: '200px',
+            maxWidth: '250px',
+            ':hover': {
+                minWidth: '205px',
+                maxWidth: '255px',
+                backgroundColor: '#f64851',
+                marginBottom: '10px'
+            },
+        },
+    },
+    titleMediaBox: {
+        '@media screen and (max-width: 500px)': {
+            display: 'flex',
+            justifyContent: 'end'
+        },
     },
     buttonMediaBox: {
         '@media screen and (max-height: 1000px)': {

@@ -9,8 +9,9 @@ export default function Welcome() {
                 <img
                     style={{
                         textAlign: 'center',
-                        width: '450px',
-                        height: '150px'
+                        minWidth: '280px',
+                        maxWidth: '300px',
+                        height: '150px',
                     }}
                     src={Smile}
                     alt='smile'
